@@ -1,0 +1,27 @@
+@Fora.Seeker.Web_HostAddress = https://localhost:7165
+
+### Import all companies (uses default 101 CIKs)
+POST {{Fora.Seeker.Web_HostAddress}}/Companies/Import
+Content-Type: application/json
+
+{}
+
+### Import specific companies
+POST {{Fora.Seeker.Web_HostAddress}}/Companies/Import
+Content-Type: application/json
+
+{
+  "ciks": [18926, 892553, 1510524]
+}
+
+### Get all companies
+GET {{Fora.Seeker.Web_HostAddress}}/Companies
+
+### Get companies starting with 'A'
+GET {{Fora.Seeker.Web_HostAddress}}/Companies?startsWithLetter=A
+
+### Get companies starting with 'U'
+GET {{Fora.Seeker.Web_HostAddress}}/Companies?startsWithLetter=U
+
+### Get companies starting with 'M'
+GET {{Fora.Seeker.Web_HostAddress}}/Companies?startsWithLetter=M
