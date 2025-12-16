@@ -4,6 +4,7 @@ namespace Fora.Seeker.Web.Infrastructure.Edgar;
 
 public class EdgarCompanyInfo
 {
+  [JsonConverter(typeof(StringToIntConverter))]
   public int Cik { get; set; }
   public string EntityName { get; set; } = string.Empty;
   public InfoFact Facts { get; set; } = new();
