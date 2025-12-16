@@ -13,6 +13,9 @@
   <Folder Name="/src/">
     <Project Path="src/Fora.Seeker.Web/Fora.Seeker.Web.csproj" />
   </Folder>
+  <Folder Name="/src/Tests/">
+    <Project Path="src/Tests/Fora.Seeker.Tests/Fora.Seeker.Tests.csproj" />
+  </Folder>
   <Folder Name="/src/_aspire/">
     <Project Path="src/Fora.Seeker.AspireHost/Fora.Seeker.AspireHost.csproj" />
     <Project Path="src/Fora.Seeker.ServiceDefaults/Fora.Seeker.ServiceDefaults.csproj" />
