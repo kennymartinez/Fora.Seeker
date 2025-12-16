@@ -51,6 +51,15 @@ public class ImportCompanies : Endpoint<ImportCompaniesRequest, ImportCompaniesR
   {
     Post("/Companies/Import");
     AllowAnonymous();
+    Summary(s =>
+    {
+      s.Summary = "Import company financial data from SEC EDGAR API";
+      s.Description = "Fetches company facts from the SEC EDGAR API for specified CIKs and persists the data. " +
+                      "If no CIKs are provided, imports all 101 default companies from the challenge requirements.";
+      s.ExampleRequest = new ImportCompaniesRequest { Ciks = new List<int> { 18926, 892553, 1510524 } };
+      s.Responses[200] = "Companies imported successfully";
+      s.Responses[500] = "Internal server error during import";
+    });
   }
 
   public override async Task HandleAsync(ImportCompaniesRequest req, CancellationToken ct)

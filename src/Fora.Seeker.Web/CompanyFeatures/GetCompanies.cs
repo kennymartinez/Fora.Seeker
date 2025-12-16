@@ -25,6 +25,14 @@ public class GetCompanies : Endpoint<GetCompaniesRequest, List<CompanyResponse>>
   {
     Get("/Companies");
     AllowAnonymous();
+    Summary(s =>
+    {
+      s.Summary = "Get companies with calculated funding amounts";
+      s.Description = "Retrieves all companies with their standard and special fundable amounts. " +
+                      "Optionally filter by the first letter of the company name.";
+      s.ExampleRequest = new GetCompaniesRequest { StartsWithLetter = "A" };
+      s.Responses[200] = "List of companies with funding calculations";
+    });
   }
 
   public override async Task HandleAsync(GetCompaniesRequest req, CancellationToken ct)
